@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produto | Loja da Scarlet</title>
+  <meta name="description" content="Detalhes de um produto do Loja da Scarlet.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Loja da Scarlet">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Produto | Loja da Scarlet">
+  <meta property="og:description" content="Detalhes de um produto do Loja da Scarlet.">
+  <meta property="og:image" content="img/og.svg">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="img/favicon.svg" alt="" width="32" height="32"> Loja da Scarlet</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Vitrine</a></li>
+            <li class="nav-item"><a class="nav-link" href="checkout.html">Carrinho e compra</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="container py-5">
+    <nav aria-label="Caminho de navegação">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Vitrine</a></li>
+        <li class="breadcrumb-item active" aria-current="page" id="breadcrumbProduto">Produto</li>
+      </ol>
+    </nav>
+
+    <article id="produtoConteudo" class="row g-5 align-items-start" hidden>
+      <div class="col-lg-6">
+        <img id="produtoImagem" class="product-detail-image" src="img/produto-1.svg" alt="" width="400" height="300">
+      </div>
+      <div class="col-lg-6">
+        <p id="produtoCategoria" class="text-secondary mb-1"></p>
+        <h1 id="produtoNome"></h1>
+        <p id="produtoResumo" class="lead"></p>
+        <ul id="produtoRegras" class="badge-list list-unstyled" aria-label="Regras atendidas"></ul>
+        <p id="produtoPreco" class="price price-large"></p>
+
+        <section aria-labelledby="titulo-descricao" class="mb-4">
+          <h2 id="titulo-descricao" class="h4">Sobre o produto</h2>
+          <p id="produtoDescricao"></p>
+          <h2 class="h4">Informações</h2>
+          <dl id="produtoInfo" class="info-list"></dl>
+        </section>
+
+        <form id="formProduto" novalidate>
+          <div class="mb-3">
+            <label for="quantidade" class="form-label">Quantidade (1 a 10)</label>
+            <input class="form-control quantity-field" id="quantidade" name="quantidade" type="number" min="1" max="10" value="1" inputmode="numeric">
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-brand btn-lg" type="submit" value="comprar">Comprar agora</button>
+            <button class="btn btn-outline-brand btn-lg" type="submit" value="carrinho">Adicionar ao carrinho</button>
+          </div>
+        </form>
+        <div id="produtoFeedback" class="mt-3" role="status" aria-live="polite"></div>
+      </div>
+    </article>
+
+    <section id="produtoNaoEncontrado" class="empty-state" aria-labelledby="titulo-erro" hidden>
+      <h1 id="titulo-erro" class="h3">Esse produto não existe, nem aqui.</h1>
+      <p>O endereço pede um produto que não está no catálogo. Talvez o link esteja incompleto.</p>
+      <a class="btn btn-brand" href="index.html">Voltar para a vitrine</a>
+    </section>
+    <noscript><p class="feedback feedback-erro">Ative o JavaScript para ver este produto.</p></noscript>
+  </main>
+
+  <footer class="site-footer py-4">
+    <div class="container">
+      <p class="mb-1 fw-semibold">Loja da Scarlet</p>
+      <p class="mb-0 small">Produtos inventados, preços fictícios. Nenhuma cobrança real é feita.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/product.js" defer></script>
+</body>
+</html>
