@@ -11,23 +11,6 @@ Projeto de banco de dados para organizar as informações do Hotel Nebula: hósp
 
 Para executar (MySQL 8.0.16 ou superior), rode os scripts nessa ordem: 01, 02 e 03.
 
----
-
-## Parte 1 - Modelagem
-
-### Diagrama ER
-
-```mermaid
-erDiagram
-    HOSPEDES ||--o{ RESERVAS : faz
-    QUARTOS ||--o{ RESERVAS : recebe
-    RESERVAS ||--o| HOSPEDAGENS : gera
-    FUNCIONARIOS ||--o{ HOSPEDAGENS : atende
-    HOSPEDAGENS ||--o{ PAGAMENTOS : gera
-    HOSPEDAGENS ||--o{ HOSPEDAGEM_SERVICOS : consome
-    SERVICOS ||--o{ HOSPEDAGEM_SERVICOS : "é consumido"
-    HOSPEDAGENS ||--o| FEEDBACKS : recebe
-```
 
 ### Entidades
 
@@ -69,7 +52,7 @@ O feedback fica ligado à hospedagem porque, a partir dela, dá para descobrir o
 
 ---
 
-## Parte 2 - Implementação
+## Parte 1 - Implementação
 
 O que foi completado no modelo lógico:
 
@@ -82,7 +65,7 @@ Os dados de teste têm 5 hóspedes, 5 quartos, 3 funcionários, 5 serviços, 9 r
 
 ---
 
-## Parte 3 - Consultas
+## Parte 2 - Consultas
 
 | # | Pergunta |
 |---|---|
