@@ -32,11 +32,11 @@ Para executar (MySQL 8.0.16 ou superior), rode os scripts nessa ordem: 01, 02 e 
 |---|---|---|
 | Hóspede faz reservas | 1:N | `reservas.id_hospede` |
 | Quarto recebe reservas | 1:N | `reservas.id_quarto` |
-| Reserva gera hospedagem | 1:1 | `hospedagens.id_reserva` (UNIQUE) |
+| Reserva gera hospedagem | 1:1 | `hospedagens.id_reserva`  |
 | Funcionário atende hospedagens | 1:N | `hospedagens.id_funcionario` |
 | Hospedagem gera pagamentos | 1:N | `pagamentos.id_hospedagem` |
 | Hospedagem consome serviços | N:N | tabela `hospedagem_servicos` |
-| Hospedagem recebe feedback | 1:1 | `feedbacks.id_hospedagem` (UNIQUE) |
+| Hospedagem recebe feedback | 1:1 | `feedbacks.id_hospedagem` |
 
 O feedback fica ligado à hospedagem porque, a partir dela, dá para descobrir o hóspede e o quarto (hospedagem → reserva → hóspede e quarto). Assim não repetimos dados, e só quem se hospedou consegue avaliar.
 
